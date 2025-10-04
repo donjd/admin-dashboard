@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 10px;
+
+  /* color variables */
+  --lightgray: #d9d9d9;
+  --gray: #2b3137;
+  --darkgray: #24292e;
+  --lightblue: #455464;
+}
+
+body {
+  background-color: var(--gray);
+  color: var(--lightgray);
+
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  background-color: var(--darkgray);
+  border: 1px solid var(--lightblue);
+}
+
+aside {
+  background: var(--darkgray);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: 40px 2fr 1fr;
+  grid-template-areas:
+    "date date date"
+    "task-requests upcoming-tasks open-projects"
+    "scratch-pad upcoming-tasks open-projects";
+}
+
+h1 {
+  transform: rotate(-90deg);
+  height: 100px;
+}
+
+h2 {
+  grid-area: date;
+}
+
+#task-request-card {
+  grid-area: task-requests;
+}
+#upcoming-tasks-card {
+  grid-area: upcoming-tasks;
+}
+#scratch-pad-card {
+  grid-area: scratch-pad;
+}
+#open-projects-card {
+  grid-area: open-projects;
+}

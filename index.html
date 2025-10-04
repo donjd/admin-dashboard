@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <aside>
-      <div class="profile-icon"></div>
+      <ul>
+        <li><i class="fa-solid fa-circle-user"></i></li>
+      </ul>
+      <ul>
+        <li><i class="fa-solid fa-list"></i></li>
+        <li><i class="fa-solid fa-file"></i></li>
+        <li><i class="fa-solid fa-image"></i></li>
+        <li><i class="fa-solid fa-bell"></i></li>
+        <li><i class="fa-solid fa-gear"></i></li>
+      </ul>
       <nav>
         <div class="nav-icon"></div>
         <div class="nav-icon"></div>
@@ -19,10 +36,22 @@
     </aside>
     <main>
       <h2>Thursday 10/2/25</h2>
-      <section class="card" id="task-request-card"></section>
-      <section class="card" id="upcoming-tasks-card"></section>
-      <section class="card" id="scratch-pad-card"></section>
-      <section class="card" id="open-projects-card"></section>
+      <article class="card container" id="task-request-card">
+        <h3>Task Requests</h3>
+        <section class="item-container container" id="task-request-item-container"></section>
+      </article>
+      <article class="card container" id="upcoming-tasks-card">
+        <h3>Upcoming Tasks</h3>
+        <section class="item-container container" id="task-request-item-container"></section>
+      </article>
+      <article class="card container" id="scratch-pad-card">
+        <h3>Scratch Pad</h3>
+        <section class="item-container container" id="scratch-pad-item-container"></section>
+      </article>
+      <article class="card container" id="open-projects-card">
+        <h3>Open Projects</h3>
+        <section class="item-container container" id="open-projects-item-container"></section>
+      </article>
     </main>
   </body>
 </html>
