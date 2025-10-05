@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -13,6 +16,11 @@
   --gray: #2b3137;
   --darkgray: #24292e;
   --lightblue: #455464;
+
+  --date-height: 25px;
+  --card-title-height: 35px;
+  --item-container-side-margin: 5px;
+  --item-container-top-margin: 20px;
 }
 
 body {
@@ -20,41 +28,82 @@ body {
   color: var(--lightgray);
 
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 50px 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
+  font-family: roboto, arial;
+  letter-spacing: 1px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: var(--date-height) 2fr 1fr;
+  grid-template-areas:
+    "date date date"
+    "task-requests upcoming-tasks open-projects"
+    "scratch-pad upcoming-tasks open-projects";
+  padding: 30px;
+  gap: 30px;
+  height: 100vh;
+}
+
+aside {
+  background: var(--darkgray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav-icons > * {
+  margin-top: 10px;
+}
+
+h1 {
+  transform: rotate(-90deg) translateX(50%);
+  font-size: 2.4rem;
+  /* border: 1px solid red; */
+  white-space: nowrap;
+  margin-top: auto;
+}
+
+h2 {
+  grid-area: date;
+  font-size: 2.4rem;
+}
+
+h3 {
+  height: var(--card-title-height);
+  padding: 15px;
+  /* border: 1px solid red; */
+  font-size: 1.5rem;
+}
+
+i {
+  font-size: 2rem;
+  margin-top: 15px;
 }
 
 li {
   list-style: none;
 }
 
-.container {
+.card {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
+}
+
+.card,
+.item-container {
   background-color: var(--darkgray);
   border: 1px solid var(--lightblue);
+  border-radius: 10px;
 }
 
-aside {
-  background: var(--darkgray);
-}
-
-main {
-  display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
-  grid-template-rows: 40px 2fr 1fr;
-  grid-template-areas:
-    "date date date"
-    "task-requests upcoming-tasks open-projects"
-    "scratch-pad upcoming-tasks open-projects";
-}
-
-h1 {
-  transform: rotate(-90deg);
-  height: 100px;
-}
-
-h2 {
-  grid-area: date;
+.item-container {
+  margin: var(--item-container-side-margin);
+  margin-top: var(--item-container-top-margin);
+  height: calc(100% - var(--card-title-height) - var(--item-container-side-margin) - var(--item-container-top-margin));
 }
 
 #task-request-card {
