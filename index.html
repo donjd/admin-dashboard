@@ -16,14 +16,26 @@
   <body>
     <aside>
       <ul>
-        <li><i class="fa-solid fa-circle-user"></i></li>
+        <button class="side-icon">
+          <li><i class="fa-solid fa-circle-user"></i></li>
+        </button>
       </ul>
       <ul class="nav-icons">
-        <li><i class="fa-solid fa-list"></i></li>
-        <li><i class="fa-solid fa-file"></i></li>
-        <li><i class="fa-solid fa-image"></i></li>
-        <li><i class="fa-solid fa-bell"></i></li>
-        <li><i class="fa-solid fa-gear"></i></li>
+        <li>
+          <button class="side-icon"><i class="fa-solid fa-list"></i></button>
+        </li>
+        <li>
+          <button class="side-icon"><i class="fa-solid fa-file"></i></button>
+        </li>
+        <li>
+          <button class="side-icon"><i class="fa-solid fa-image"></i></button>
+        </li>
+        <li>
+          <button class="side-icon"><i class="fa-solid fa-bell"></i></button>
+        </li>
+        <li>
+          <button class="side-icon"><i class="fa-solid fa-gear"></i></button>
+        </li>
       </ul>
       <h1>Project Manager</h1>
     </aside>
@@ -31,7 +43,15 @@
       <h2>Thursday 10/2/25</h2>
       <article class="card" id="task-request-card">
         <h3>Task Requests</h3>
-        <section class="item-container" id="task-request-item-container"></section>
+        <section class="item-container" id="task-request-item-container">
+          <p id="task-request-task-header">Task</p>
+          <p id="task-request-due-date-header">Due Date</p>
+          <p id="task-request-status-header">Status</p>
+          <p class="task-request-task">Create dashboard</p>
+          <p class="task-request-date">10/13/25</p>
+          <p class="task-request-status">Accepted</p>
+          <p class="task-request-project">Project A | 125000</p>
+        </section>
       </article>
       <article class="card" id="upcoming-tasks-card">
         <h3>Upcoming Tasks</h3>
