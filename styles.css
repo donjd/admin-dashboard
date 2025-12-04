@@ -35,40 +35,6 @@ body {
   letter-spacing: 1px;
 }
 
-div.content-section {
-  display: grid;
-  grid-template-rows: 70px 1fr;
-}
-
-h2 {
-  /* border: 1px soslid red; */
-  font-size: 2.4rem;
-  padding: 20px 0 0 30px;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
-  /* line below not working. Need to put a max height on the first row.
-   */
-  grid-template-rows: 300px 4fr;
-  grid-template-areas:
-    "task-requests upcoming-tasks open-projects"
-    "scratch-pad upcoming-tasks open-projects";
-  padding: 10px 30px 30px 30px;
-  gap: 30px;
-}
-
-article.card {
-  /* border: 1px solid red; */
-  overflow: hidden;
-}
-
-.item-container {
-  scrollbar-color: var(--gray) var(--darkgray);
-  scrollbar-width: thin;
-}
-
 aside {
   background: var(--darkgray);
   display: flex;
@@ -90,11 +56,58 @@ h1 {
   margin-top: auto;
 }
 
+div.content-section {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+
+h2 {
+  font-size: 2.4rem;
+  padding: 20px 0 0 30px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr;
+  grid-template-rows: 300px 1fr;
+  grid-template-areas:
+    "task-requests upcoming-tasks open-projects"
+    "scratch-pad upcoming-tasks open-projects";
+  padding: 10px 30px 30px 30px;
+  gap: 30px;
+}
+
+.card {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
+}
+
+.card,
+.item-container {
+  background-color: var(--darkgray);
+  border: 1px solid var(--lightblue);
+  border-radius: 10px;
+}
+
 h3 {
   height: var(--card-title-height);
   padding: 15px;
   /* border: 1px solid red; */
   font-size: 1.5rem;
+}
+
+.item-container {
+  margin: var(--item-container-side-margin);
+  margin-top: var(--item-container-top-margin);
+  height: calc(100% - var(--card-title-height) - var(--item-container-side-margin) - var(--item-container-top-margin));
+  display: grid;
+  grid-template-columns: 1fr 75px 50px;
+  grid-template-rows: 25px;
+  grid-auto-rows: 40px;
+  column-gap: 10px;
+  padding: 10px;
+  overflow: auto;
+  scrollbar-color: var(--gray) var(--darkgray);
+  scrollbar-width: thin;
 }
 
 p {
@@ -135,30 +148,6 @@ button.side-icon:hover {
 
 li {
   list-style: none;
-}
-
-.card {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
-}
-
-.card,
-.item-container {
-  background-color: var(--darkgray);
-  border: 1px solid var(--lightblue);
-  border-radius: 10px;
-}
-
-.item-container {
-  margin: var(--item-container-side-margin);
-  margin-top: var(--item-container-top-margin);
-  height: calc(100% - var(--card-title-height) - var(--item-container-side-margin) - var(--item-container-top-margin));
-  display: grid;
-  grid-template-columns: 1fr 75px 50px;
-  grid-template-rows: 25px;
-  grid-auto-rows: 40px;
-  column-gap: 10px;
-  padding: 10px;
-  overflow: auto;
 }
 
 #scratch-pad-card > .item-container {
