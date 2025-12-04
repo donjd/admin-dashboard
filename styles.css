@@ -28,11 +28,13 @@ body {
   color: var(--lightgray);
 
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
   font-family: roboto, arial;
   letter-spacing: 1px;
+  position: relative;
+  margin-left: 50px;
 }
 
 aside {
@@ -42,6 +44,11 @@ aside {
   align-items: center;
   gap: 50px;
   padding-top: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
 }
 
 .nav-icons > * {
@@ -100,9 +107,10 @@ h3 {
   margin-top: var(--item-container-top-margin);
   height: calc(100% - var(--card-title-height) - var(--item-container-side-margin) - var(--item-container-top-margin));
   display: grid;
+  align-content: start;
   grid-template-columns: 1fr 75px 50px;
-  grid-template-rows: 25px;
-  grid-auto-rows: 40px;
+  /* grid-auto-rows: auto; */
+  row-gap: 15px;
   column-gap: 10px;
   padding: 10px;
   overflow: auto;
@@ -199,4 +207,27 @@ textarea {
 
 #task-request-item-container {
   overflow: auto;
+}
+
+@media (max-width: 1100px) {
+  main {
+    height: calc(100vh - var(--date-height) - 30px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 300px);
+    grid-template-areas:
+      "task-requests upcoming-tasks "
+      "scratch-pad open-projects";
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "task-requests"
+      "upcoming-tasks"
+      "scratch-pad"
+      "open-projects";
+  }
 }
