@@ -108,7 +108,7 @@ h3 {
   height: calc(100% - var(--card-title-height) - var(--item-container-side-margin) - var(--item-container-top-margin));
   display: grid;
   align-content: start;
-  grid-template-columns: 1fr 75px 50px;
+  grid-template-columns: 1fr 75px 75px;
   /* grid-auto-rows: auto; */
   row-gap: 15px;
   column-gap: 10px;
@@ -132,7 +132,8 @@ i {
   color: var(--lightgray);
 }
 
-button.side-icon {
+button.side-icon,
+button.fa-bars-button {
   padding: 6px;
   background-color: var(--darkgray);
   border: none;
@@ -164,7 +165,7 @@ li {
 }
 
 #scratch-pad-card > .item-container {
-  border: 1px solid var(--darkgray);
+  border: 1px solid var(--lightblue);
 }
 
 #scratch-pad-card > textarea:hover {
@@ -215,6 +216,10 @@ textarea {
   overflow: auto;
 }
 
+.fa-bars-button {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   main {
     height: calc(100vh - var(--date-height) - 30px);
@@ -243,17 +248,39 @@ textarea {
 
   body {
     margin: 0;
+    margin-top: 60px;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 
   aside {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: space-between;
     gap: 50px;
     padding-top: 10px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 50px;
+    height: 120px;
+    transform: translatey(-50%);
+    padding: 0 20px 10px 20px;
+  }
+
+  .side-icon,
+  h1,
+  .nav-icons {
+    display: none;
+  }
+
+  button.side-icon-circle-user {
+    display: block;
+  }
+
+  .fa-bars-button {
+    display: block;
   }
 }
