@@ -118,6 +118,11 @@ h3 {
   scrollbar-width: thin;
 }
 
+#open-projects-item-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
 p {
   font-size: 1rem;
 }
@@ -183,7 +188,8 @@ textarea {
 }
 
 .task-request-header,
-.upcoming-task-header {
+.upcoming-task-header,
+.open-project-header {
   color: var(--lightblue);
 }
 
@@ -220,14 +226,34 @@ textarea {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 610px) {
+  :root {
+    font-size: 13px;
+  }
+
   main {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     grid-template-areas:
       "task-requests"
       "upcoming-tasks"
-      "scratch-pad"
-      "open-projects";
+      "open-projects"
+      "scratch-pad";
+  }
+
+  body {
+    margin: 0;
+  }
+
+  aside {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    padding-top: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50px;
   }
 }
