@@ -140,7 +140,8 @@ button.fa-bars-button {
   border-radius: 5px;
 }
 
-button.side-icon:hover {
+button.side-icon:hover,
+button.fa-bars-button:hover {
   background-color: var(--lightblue);
   transition: 150ms;
 }
